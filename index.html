@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AGE CALCULATOR</title>
+    <script defer src="js/main.js"></script>
+    <link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32x32.png">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,700;1,400;1,800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <label class="theme" id="theme">
+        <input type="checkbox">
+        <span class="slider round"></span>
+    </label>
+    <main id="mainsection">
+        <div id="datepicker">
+            <div>
+                <div class="datepickertitle" id="errordaytitle">
+                    DAY
+                </div>
+                <div >
+                    <input type="number" name="date" placeholder="DD" id="dayinput" class="datebox">
+                </div>
+                <div class="errormessage" id="dayerrormessage">
+                </div>
+            </div>
+            <div>
+                <div class="datepickertitle" id="errormonthtitle">
+                    MONTH
+                </div>
+                <div>
+                    <input type="number" name="date" placeholder="MM" id="monthinput" class="datebox">
+                </div>
+                <div class="errormessage" id="montherrormessage">
+                </div>
+            </div>
+            <div>
+                <div class="datepickertitle" id="erroryeartitle">
+                    YEAR
+                </div>
+                <div>
+                    <input type="number" name="date" placeholder="YYYY" id="yearinput" class="datebox">
+                </div>
+                <div class="errormessage" id="yearerrormessage">
+                </div>
+            </div>
+        </div>
+        <div class="agedisplay">
+            <p><span id="yearvaluedisplay">--</span><span id="yearlabeldisplay">years</span></p>
+
+            <p><span id="monthvaluedisplay">--</span><span id="monthlabeldisplay">months</span></p>
+
+            <p><span id="dayvaluedisplay">--</span><span id="daylabeldisplay">days</span></p>
+
+            <button onclick="submitBirthDate()" id="submit">
+                <img src="images/icon-arrow.svg" alt="submit">
+            </button>
+        </div>
+       
+    </main>
+</body>
+</html>

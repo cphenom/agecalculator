@@ -1,0 +1,251 @@
+:root{
+    --Purple: hsl(259, 100%, 65%);
+    --lightRed: hsl(0, 100%, 67%);
+    --White: hsl(0, 0%, 100%);
+    --offWhite: hsl(0, 0%, 94%);
+    --lightGrey: hsl(0, 0%, 86%);
+    --smokeyGrey: hsl(0, 1%, 44%);
+    --offBlack: hsl(0, 0%, 8%);
+    --poppins: 'Poppins', sans-serif;
+}
+/* The theme - the box around the slider */
+.theme {
+    position: fixed;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+    right: 47%;
+    top: 35px;
+}
+
+/* Hide default HTML checkbox */
+.theme input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+    
+}
+
+/* The slider */
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: whitesmoke;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+input:checked + .slider {
+    background-color: var(--smokeyGrey);
+}
+
+input:focus + .slider {
+    box-shadow: 0 0 1px var(--offBlack);
+}
+
+input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+    border-radius: 34px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
+body{
+    background-color: var(--offWhite);
+    display: flex;
+    justify-content: center;
+    margin-top: 80px;
+}
+.darktheme {
+    background-color: black;
+    color: var(--offWhite);
+}
+.darkinput {
+    background-color: var(--offWhite) !important;
+}
+.darktheme_mainsection {
+    background-color: var(--offBlack) !important;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    opacity: 0;
+}
+input::placeholder {
+font-family: var(--poppins);
+font-size: 20px;
+font-weight:700;
+}
+input {
+    padding-left: 10px;
+    margin-right: 20px;
+}
+input:focus {
+    outline-color: var(--Purple);
+}
+#mainsection {
+    height: 420px;
+    width: 500px;
+    background-color:var(--White); 
+    border-radius: 20px 20px 100px 20px;
+}
+#datepicker {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 45px;
+    margin-left: 40px;
+}
+
+.datepickertitle {
+    color: var(--smokeyGrey);
+    font-family: var(--poppins);
+    font-weight: 800;
+    font-size: 10px;
+    letter-spacing: 3px;
+}
+.datebox {
+    width: 82px;
+    height: 40px;
+    font-size: 30px;
+    margin-top: 6px;
+    border-radius: 5px;
+    border: 1px solid var(--lightGrey);
+}
+#yearinput {
+    margin-right: 150px;
+}
+.agedisplay {
+    margin-left: 40px;
+    margin-right: 80px;
+    margin-top: 25px;
+    border-top: 1px solid var(--lightGrey);
+    font-family: var(--poppins);
+    font-weight: 900;
+    font-style: italic;
+    font-size: 60px;
+    position: relative;
+}
+.agedisplay p {
+    margin: 0;
+}
+#yearvaluedisplay,
+#monthvaluedisplay,
+#dayvaluedisplay {
+    color: var(--Purple);
+    margin-right: 10px;
+    letter-spacing: 5px;
+}
+#submit {
+    background-color: var(--Purple);
+    height: 60px;
+    width: 60px;
+    border: 0;
+    border-radius: 30px;
+    padding: 3px auto;
+    position: absolute;
+    top: -30px;
+    right: -25px;
+
+}
+#submit img {
+    height: 30px;
+    width: 30px; 
+}
+#submit:hover {
+    cursor: pointer;
+}
+#submit:active {
+    background-color: black;
+}
+/*
+error css
+*/
+.errortitle {
+    color: var(--lightRed) !important;
+    
+}
+.errorbox {
+    border-color: var(--lightRed);
+}
+.errormessage {
+    font-size: 9px;
+    font-family: var(--poppins);
+    font-style: italic;
+    font-weight: bold;
+    margin-top: 5px;
+    color: var(--lightRed);
+    display: none;
+}
+.displayerrormessage {
+    display: flex;
+}
+.font8 {
+    font-size: 8px;
+}
+
+/* MOBILE VIEW DESIGN CSS BELOW */
+@media (max-width: 375px) {
+    .mainsection {
+        height: 700px;
+        width: 350px;
+        border-radius: 20px 20px 100px 20px;
+    }
+    input {
+        padding-left: 10px;
+        margin-right: 0px;
+    }
+    .datebox {
+        width: 70px;
+        height: 35px;
+        font-size: 25px;
+        
+    }
+    #datepicker {
+        margin-left: 20px;
+        margin-right: 20px;
+        
+    }
+    #yearinput {
+        margin-right: 0;
+    }
+    .agedisplay {
+        margin-left: 30px;
+        margin-right: 30px;
+        margin-top: 60px;
+        padding-top: 50px;
+        font-size: 30px;
+        font-weight: 700;
+    }
+    #submit {
+        right: 39%;
+    }
+    .agedisplay p {
+        margin: 4px;
+    }
+    .errormessage {
+        font-size: 8px;
+    }
+}
